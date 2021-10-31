@@ -58,8 +58,8 @@ class MyClass extends StatelessWidget {
                   backgroundColor: Colors.white,
                 )
               ],
-              accountName: Text('박수환'),
-              accountEmail: Text('tim9819@naver.com'),
+              accountName: Text('dddsdfsdffsdfsdfsdfsdfsdfsdfsdfsdfsdf'),
+              accountEmail: Text('aaaa@dfdfdf.com'),
               onDetailsPressed: (){
                   print('arrow is clicked');
               },
