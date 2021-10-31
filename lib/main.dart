@@ -215,3 +215,220 @@ class MyClass extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'SnackBar',
+      theme: ThemeData(primarySwatch: Colors.orange),
+      home: MyPage(),
+    );
+  }
+}
+
+class MyPage extends StatelessWidget {
+  const MyPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('snack Bar'),
+        centerTitle: true,
+      ),
+      body: MySnackBar(),
+    );
+  }
+}
+
+class MySnackBar extends StatelessWidget {
+  const MySnackBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: RaisedButton(
+        child: Text('Clickde to see the Message'),
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(
+            'Snack Bar 내용출력',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white),
+          ),
+            backgroundColor: Colors.blue,
+            duration: Duration(milliseconds: 300),
+          ));
+        },
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyFirstButtons(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyFirstButtons extends StatefulWidget {
+  @override
+  _MyFirstButtonsState createState() => _MyFirstButtonsState();
+}
+
+class _MyFirstButtonsState extends State<MyFirstButtons> {
+  Icon starIcon = Icon(Icons.star);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 50),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ElevatedButton(
+            onPressed: () {},
+            child: Text("ElevatedButton"),
+          ),
+          ElevatedButton.icon(
+            onPressed: () {},
+            icon: starIcon,
+            label: Text("ElevatedButton.icon"),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text("TextButton"),
+          ),
+          TextButton.icon(
+            onPressed: () {},
+            icon: starIcon,
+            label: Text("TextButton.icon"),
+          ),
+          OutlinedButton(
+            onPressed: () {},
+            child: Text("OutlinedButton"),
+          ),
+          OutlinedButton.icon(
+            onPressed: () {},
+            icon: starIcon,
+            label: Text("OutlinedButton.icon"),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: starIcon,
+                iconSize: 20,
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: starIcon,
+                iconSize: 40,
+              ),
+              Ink(
+                decoration: const ShapeDecoration(
+                  color: Colors.lightBlue,
+                  shape: CircleBorder(),
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: starIcon,
+                  iconSize: 20,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+          ButtonBar(
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Text("TextButton"),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("ElevatedButton"),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 30.0),
+            child: Card(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10),
+                        Text(
+                          "This is a Card widget to show how to use ButtonBar",
+                        ),
+                      ],
+                    ),
+                  ),
+                  ButtonBar(
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text("TextButton"),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text("ElevatedButton"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
