@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: '태초라포르',
+      title: 't',
       home: MyClass(),
     );
   }
@@ -264,7 +264,7 @@ class MySnackBar extends StatelessWidget {
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(
-            'Snack Bar 내용출력',
+            'Snack Bar ----',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white),
           ),
